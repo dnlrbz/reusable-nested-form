@@ -1,0 +1,23 @@
+.customer-form {
+  margin-bottom: 20px;
+  width: 700px;
+
+  mat-form-field {
+    width: 50%;
+  }
+}
+
+mat-card {
+  min-width: 700px;
+}
+
+button {
+  margin: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}

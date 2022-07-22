@@ -1,0 +1,14 @@
+<form [formGroup]="addressForm" class="address-form">
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Street</mat-label>
+    <input matInput formControlName="street" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>House number</mat-label>
+    <input matInput formControlName="house" type="number">
+  </mat-form-field>
+</form>

@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <form [formGroup]="companyForm">
+    <mat-card class="mat-elevation-z8">
+      <mat-card-header>Company address</mat-card-header>
+
+      <app-address-form formControlName="companyAddress"></app-address-form>
+
+      <mat-card class="mat-elevation-z6 customer-form" formArrayName="customerAddresses"
+                *ngFor="let customerAddress of customerAddressesFormArray.controls; let i = index">
+        <mat-card-header>{{i + 1}} customer's address</mat-card-header>
+
+        <app-address-form [formControl]="customerAddress"></app-address-form>
+
+        <button mat-icon-button color="warn" (click)="removeCustomerAddress(i)">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" (click)="toggleCustomerAddressState(i)">
+          {{ customerAddress.enabled ? 'Disable' : 'Enable' }}
+        </button>
+      </mat-card>
+
+      <button mat-raised-button color="primary" (click)="addCustomerAddress()">+ Add Customer's Address</button>
+    </mat-card>
+  </form>
+  <section>
+    <h2>Company form value:</h2>
+    <pre>
+      <p>{{companyForm.value | json}}</p>
+    </pre>
+    <h3>Form validity: {{companyForm.status}}</h3>
+  </section>
+</div>
