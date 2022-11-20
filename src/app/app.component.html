@@ -1,11 +1,11 @@
 <div class="wrapper">
   <form [formGroup]="companyForm">
-    <mat-card class="mat-elevation-z8">
+    <mat-card appearance="outlined" class="mat-elevation-z8 card">
       <mat-card-header>Company address</mat-card-header>
 
       <app-address-form formControlName="companyAddress"></app-address-form>
 
-      <mat-card class="mat-elevation-z6 customer-form" formArrayName="customerAddresses"
+      <mat-card appearance="outlined" class="mat-elevation-z6 customer-form card" formArrayName="customerAddresses"
                 *ngFor="let customerAddress of customerAddressesFormArray.controls; let i = index">
         <mat-card-header>{{i + 1}} customer's address</mat-card-header>
 
